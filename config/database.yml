@@ -21,5 +21,10 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+    adapter: postgresql
+    encoding: utf8
+    database: d8r0907uh281ot
+    pool: 5
+    username: pdwkvroafdkgpl    #-> *** data from heroku's postgres user details page
+    password: RoIuM45VNvRloStZ7zl3qDyLbL
+    host: localhost
