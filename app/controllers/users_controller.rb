@@ -23,7 +23,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to @user, notice: 'User was successfully created.'
+      flash[:success] = "welcome to blog #{@user.username}"
+      redirect_to articles_path
     else
       render :new
     end
@@ -32,7 +33,8 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)
-      redirect_to @user, notice: 'User was successfully updated.'
+      flash[:success] = "your account was updated successfully"
+      redirect_to articles_path
     else
       render :edit
     end
@@ -52,6 +54,6 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:username, :email)
+      params.require(:user).permit(:username, :email,:password)
     end
 end
