@@ -11,6 +11,11 @@
           </div>
           <div class="article-body">
             <td><%= truncate(article.description,length:100) %></td>
+            <div class="article-meta-details">
+              <small>Create by: <%= article.user.username if article.user %></small>
+              <%= time_ago_in_words(article.created_at)%> ago
+              last updated:  <%= time_ago_in_words(article.updated_at)%>
+            </div>
           </div>
           <div class="articale-actions">
             <%= link_to 'Edit this Article', edit_article_path(article), class: "btn btn-xs btn-primary" %>
