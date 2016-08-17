@@ -3,6 +3,11 @@ $navbar-default-bg: #b9b698;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.container a:hover{
+  color: #4662b9;
+  background-color: #fff;
+}
+
 #logo {
   float:left;
   font-size:1.7em;
@@ -57,6 +62,10 @@ $navbar-default-bg: #b9b698;
 
 h4.description{
   margin-top:0;
+}
+
+.listing{
+  list-style-type:none;
 }
 
 .article-title{
