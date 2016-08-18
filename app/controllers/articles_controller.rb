@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles
   def index
-    @articles = Article.all
+    @articles = Article.paginate(page: params[:page],per_page:5)
   end
 
   # GET /articles/1
@@ -22,9 +22,9 @@ class ArticlesController < ApplicationController
   # POST /articles
   def create
 
-    debugg
+
     @article = Article.new(article_params)
-    # @article.user = User.first
+    @article.user = User.first
     if @article.save
       flash[:success] = 'Article was successfully created.'
       redirect_to articles_path(@article)
