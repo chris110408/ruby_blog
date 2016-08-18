@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-
+  before_action :require_user,except: [:index,:show]
+  before_action :require_same_user, only: [:edit,:update,:destroy]
   # GET /articles
   def index
     @articles = Article.paginate(page: params[:page],per_page:5)
@@ -59,5 +60,12 @@ class ArticlesController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def article_params
       params.require(:article).permit(:title, :description)
+    end
+
+    def require_same_user
+      if current_user != @article.user
+        flash[:danger] = "you are only edit or delete your own articles"
+        redirect_to root_path
+      end
     end
 end
