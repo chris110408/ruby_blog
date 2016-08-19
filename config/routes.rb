@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   delete 'login', to: 'sessions#destroy'
   resources :articles
   resources :users,except:[:new]
+  resources :categories
+
   # get 'pages/home', to: 'pages#home'
   #
   # get 'pages/about', to: 'pages#about'
