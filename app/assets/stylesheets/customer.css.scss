@@ -68,6 +68,18 @@ h4.description{
   list-style-type:none;
 }
 
+.badge{
+  background-color: #c8e2f6;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+
+}
+
+.input_checkbox input {
+  width:auto !important;
+}
+
 .article-title{
   font-weight: bold;
   font-size:1.5em;
