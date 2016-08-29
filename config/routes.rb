@@ -2,10 +2,12 @@ Rails.application.routes.draw do
 
 
 
+  get 'about/index'
+
   resources :comments
 
   root 'pages#home'
-  get 'about', to: 'pages#about'
+  get 'about', to: 'about#index'
   get 'signup',to: 'users#new'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'

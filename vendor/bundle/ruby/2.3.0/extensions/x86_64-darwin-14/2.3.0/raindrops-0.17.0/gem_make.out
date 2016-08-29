@@ -1,0 +1,34 @@
+current directory: /Users/leichen/RubymineProjects/untitled1/vendor/bundle/ruby/2.3.0/gems/raindrops-0.17.0/ext/raindrops
+/Users/leichen/.rvm/rubies/ruby-2.3.1/bin/ruby -r ./siteconf20160829-9831-jjoz12.rb extconf.rb
+checking for mmap() in sys/mman.h... yes
+checking for munmap() in sys/mman.h... yes
+checking for mremap() in sys/mman.h... no
+checking for linux/tcp.h... no
+checking for getpagesize() in unistd.h... yes
+checking for rb_thread_blocking_region()... no
+checking for rb_thread_io_blocking_region()... yes
+checking for GCC 4+ atomic builtins... yes
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /Users/leichen/RubymineProjects/untitled1/vendor/bundle/ruby/2.3.0/extensions/x86_64-darwin-14/2.3.0/raindrops-0.17.0/mkmf.log
+
+current directory: /Users/leichen/RubymineProjects/untitled1/vendor/bundle/ruby/2.3.0/gems/raindrops-0.17.0/ext/raindrops
+make "DESTDIR=" clean
+
+current directory: /Users/leichen/RubymineProjects/untitled1/vendor/bundle/ruby/2.3.0/gems/raindrops-0.17.0/ext/raindrops
+make "DESTDIR="
+compiling linux_inet_diag.c
+In file included from linux_inet_diag.c:8:
+./my_fileno.h:23:12: warning: unused function 'my_fileno' [-Wunused-function]
+static int my_fileno(VALUE io)
+           ^
+1 warning generated.
+compiling linux_tcp_info.c
+compiling raindrops.c
+linking shared-object raindrops_ext.bundle
+
+current directory: /Users/leichen/RubymineProjects/untitled1/vendor/bundle/ruby/2.3.0/gems/raindrops-0.17.0/ext/raindrops
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 raindrops_ext.bundle ./.gem.20160829-9831-13mane4
